@@ -1,4 +1,5 @@
 const ninja = document.querySelector('.ninja');
+const shuriken= document.querySelector('.shuriken')
 const caixa = document.querySelector('.caixa');
 const score = document.querySelector('.score');
 var cont = 0
@@ -25,7 +26,7 @@ const jump = () => {
 
 const loop = setInterval(() => {
 
-    
+    const shurikenPosicao = shuriken.offsetLeft;
     const caixaPosicao = caixa.offsetLeft;
     const ninjaPosicao = +getComputedStyle(ninja).bottom.replace('px','');
      console.log(ninjaPosicao) 
@@ -33,6 +34,8 @@ const loop = setInterval(() => {
     if(caixaPosicao <= 90 && caixaPosicao > 0 && ninjaPosicao < 70 ){
       
         jogar = true
+        
+
         caixa.style.animation = 'none';
         caixa.style.left = `${caixaPosicao}px`;
 
@@ -51,6 +54,26 @@ const loop = setInterval(() => {
        setTimeout(gameover,100)
        setInterval(loop)
      
+    }
+    else if(shurikenPosicao <= 85 && shurikenPosicao > 0 && ninjaPosicao < 65 ){
+
+        shuriken.style.animation = 'none';
+        shuriken.style.left = `${shurikenPosicao}px`;
+        
+        ninja.style.animation = 'none';
+        ninja.style.bottom  = `${ninjaPosicao}px` 
+
+        ninja.src = './fotos/game-over-2.gif'
+        
+        
+        clearInterval(loop)
+        
+       function gameover(){
+        alert('gameover') 
+        jogar = false
+       }
+       setTimeout(gameover,100)
+       setInterval(loop)
     }
     else{
         

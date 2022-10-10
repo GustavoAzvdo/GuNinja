@@ -5,7 +5,7 @@
 }
 
 .game.board{
-   
+    
     position: relative;
     width: 100%;
     height: 500px;
@@ -15,11 +15,19 @@
     background: linear-gradient(rgb(8, 7, 7),rgb(48, 7, 2),rgb(63, 42, 2),rgb(179, 123, 19));
 }
 .caixa{
+    
     position: absolute;
     bottom: 0;
     width: 70px;
-    right: -80px;
-    animation: caixa-animacao 1s infinite linear;
+    right: -80px;  
+    animation: caixa-animacao 3s infinite linear;
+ }
+.shuriken{
+    position: absolute;
+    bottom: 120px;
+    width: 40px;
+    right: -50px;  
+    animation: shuriken-animacao 1s infinite linear; 
 }
 .ninja{
     position: absolute;
@@ -31,10 +39,11 @@
     animation: jump 600ms ease-out;
 }
 .florestas{
-    background-image: url(/fotos/florestas.png);
-    background-repeat: repeat-x space ;
-    position: absolute;  
-    animation: florestas-animacao infinite linear;   
+    background-image: url(/fotos/florestas.png); 
+    background-repeat: repeat; 
+    position: absolute;
+    display: inline-flex;
+    animation: florestas-animacao 4s infinite linear ;   
     bottom: 0px;
 }
 h1{
@@ -43,7 +52,7 @@ h1{
 
 @keyframes caixa-animacao{
     from{
-        right: 0%;
+        right: -20%;
     }
     to{
         right: 100%;
@@ -76,5 +85,14 @@ h1{
     }
     to{
         right: 100%;
+    }
+}
+
+@keyframes shuriken-animacao{
+    from{
+        right: 0%
+    }
+    to{
+        right: 100%
     }
 }
