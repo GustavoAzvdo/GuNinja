@@ -7,7 +7,7 @@ var jogar = false
 
 function jogue(){
     return(
-        jogar = false
+        jogar = true
     )
        
 }
@@ -25,7 +25,7 @@ const jump = () => {
 }
 
 const loop = setInterval(() => {
-
+    jogar = false
     const shurikenPosicao = shuriken.offsetLeft;
     const caixaPosicao = caixa.offsetLeft;
     const ninjaPosicao = +getComputedStyle(ninja).bottom.replace('px','');
@@ -35,6 +35,9 @@ const loop = setInterval(() => {
       
         jogar = true
         
+
+        shuriken.style.animation = 'none';
+        shuriken.style.left = `${shurikenPosicao}px`;
 
         caixa.style.animation = 'none';
         caixa.style.left = `${caixaPosicao}px`;
@@ -49,16 +52,19 @@ const loop = setInterval(() => {
         
        function gameover(){
         alert('gameover') 
-        jogar = false
+        
        }
        setTimeout(gameover,100)
        setInterval(loop)
      
     }
-    else if(shurikenPosicao <= 85 && shurikenPosicao > 0 && ninjaPosicao < 65 ){
+    else if(shurikenPosicao <= 85 && shurikenPosicao > 0 && (ninjaPosicao >= 65)){
 
         shuriken.style.animation = 'none';
         shuriken.style.left = `${shurikenPosicao}px`;
+
+        caixa.style.animation = 'none';
+        caixa.style.left = `${caixaPosicao}px`;
         
         ninja.style.animation = 'none';
         ninja.style.bottom  = `${ninjaPosicao}px` 

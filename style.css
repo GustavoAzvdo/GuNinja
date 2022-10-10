@@ -20,7 +20,7 @@
     bottom: 0;
     width: 70px;
     right: -80px;  
-    animation: caixa-animacao 3s infinite linear;
+    animation: caixa-animacao 3s infinite linear; 
  }
 .shuriken{
     position: absolute;
