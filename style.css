@@ -20,7 +20,7 @@
     bottom: 0;
     width: 70px;
     right: -80px;  
-    animation: caixa-animacao 3s infinite linear; 
+    animation: caixa-animacao 1s infinite linear; 
  }
 .shuriken{
     position: absolute;
@@ -43,7 +43,7 @@
     background-repeat: repeat; 
     position: absolute;
     display: inline-flex;
-    animation: florestas-animacao 4s infinite linear ;   
+    animation: florestas-animacao infinite linear ;   
     bottom: 0px;
 }
 h1{
@@ -52,7 +52,7 @@ h1{
 
 @keyframes caixa-animacao{
     from{
-        right: -20%;
+        right: -15%;
     }
     to{
         right: 100%;
@@ -65,17 +65,18 @@ h1{
         bottom:0px;
     }
     40%{
-        bottom: 130px
+        bottom: 190px
     }
     50%{
-        bottom:120px;
+        bottom:180px;
     }
     60%{
-        bottom:115px
+        bottom:175px
     }  
     100%{
         bottom:0%;
     }
+    
 }
 
 @keyframes florestas-animacao{
@@ -90,9 +91,11 @@ h1{
 
 @keyframes shuriken-animacao{
     from{
-        right: 0%
+        right: -60%;
     }
+   
+    
     to{
-        right: 100%
+        right: 100%;
     }
 }
