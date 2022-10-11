@@ -3,6 +3,9 @@ const shuriken= document.querySelector('.shuriken')
 const caixa = document.querySelector('.caixa');
 const score = document.querySelector('.score');
 var cont = 0
+var jogar = false
+
+
 
 document.addEventListener("keydown", (espaco) =>{
     if((espaco.code === "Space")){
@@ -52,10 +55,13 @@ const loop = setInterval(() => {
        }
        setTimeout(gameover,100)
        setInterval(loop)
+
+       jogar = false
      
     }
     else if(shurikenPosicao <= 85 && shurikenPosicao > 0 && (ninjaPosicao >= 65 && ninjaPosicao < 120)){
 
+        
         shuriken.style.animation = 'none';
         shuriken.style.left = `${shurikenPosicao}px`;
 
@@ -72,10 +78,12 @@ const loop = setInterval(() => {
         
        function gameover(){
         alert('gameover') 
-        jogar = false
+        
        }
        setTimeout(gameover,100)
        setInterval(loop)
+
+       jogar = false
     }
     else{
         
@@ -108,4 +116,4 @@ function sortear(){
 }
 sortear();
 setInterval(function(){sortear()},1000); 
-reset()
+
