@@ -49,6 +49,9 @@
 h1{
     color: white
 }
+.teclaespaco{
+  width: 200px;  
+}
 
 @keyframes caixa-animacao{
     from{

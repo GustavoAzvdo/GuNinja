@@ -1,4 +1,4 @@
-const ninja = document.querySelector('.ninja');
+const ninja = document.querySelector('.ninja');                     //variaveis constantes 
 const shuriken= document.querySelector('.shuriken')
 const caixa = document.querySelector('.caixa');
 const score = document.querySelector('.score');
