@@ -2,17 +2,16 @@ const ninja = document.querySelector('.ninja');                     //variaveis 
 const shuriken= document.querySelector('.shuriken')
 const caixa = document.querySelector('.caixa');
 const score = document.querySelector('.score');
+const musica = document.querySelector('.musica');
 var cont = 0
-var jogar = false
 
-
-
+var jogar = false;  
 document.addEventListener("keydown", (espaco) =>{
     if((espaco.code === "Space")){
         jump();
-            }
+     }    
+     musica.muted = false    
 })
-
 
 const jump = () => {
     ninja.classList.add('jump');
@@ -21,10 +20,8 @@ const jump = () => {
     },600)
 }
 
-
-
 const loop = setInterval(() => {
-    jogar = false
+    
     const shurikenPosicao = shuriken.offsetLeft;
     const caixaPosicao = caixa.offsetLeft;
     const ninjaPosicao = +getComputedStyle(ninja).bottom.replace('px','');
@@ -32,9 +29,6 @@ const loop = setInterval(() => {
 
     if(caixaPosicao <= 90 && caixaPosicao > 0 && ninjaPosicao < 70 ){
       
-       
-        
-
         shuriken.style.animation = 'none';
         shuriken.style.left = `${shurikenPosicao}px`;
 
@@ -50,13 +44,16 @@ const loop = setInterval(() => {
         clearInterval(loop)
         
        function gameover(){
-        alert('gameover') 
-        
-       }
+            var alerta = alert(`GAMEOVER! A sua pontuação foi de ${cont}`)
+            
+                location.reload();
+            
+            
+        }
        setTimeout(gameover,100)
        setInterval(loop)
 
-       jogar = false
+       
      
     }
     else if(shurikenPosicao <= 85 && shurikenPosicao > 0 && (ninjaPosicao >= 65 && ninjaPosicao < 120)){
@@ -76,14 +73,18 @@ const loop = setInterval(() => {
         
         clearInterval(loop)
         
-       function gameover(){
-        alert('gameover') 
-        
-       }
+        function gameover(){
+            var alerta = alert(`GAMEOVER! A sua pontuação foi de ${cont}`) 
+            
+                location.reload();
+            
+           
+        }
        setTimeout(gameover,100)
        setInterval(loop)
 
-       jogar = false
+       
+       
     }
     else{
         
@@ -115,5 +116,9 @@ function sortear(){
         }
 }
 sortear();
-setInterval(function(){sortear()},1000); 
+setInterval(function(){sortear()},900); 
+
+
+
+
 

@@ -3,15 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-color: rgb(35, 34, 34)
+}
 .game.board{
     
     position: relative;
-    width: 100%;
+    width: 95%;
     height: 500px;
-    border-bottom: 10px solid;
-    margin: 0 auto;
     overflow: hidden;
+    margin: 90px auto;
+    border-radius: 4px;
+    border-bottom: 15px solid rgb(100, 32, 13);
     background: linear-gradient(rgb(8, 7, 7),rgb(48, 7, 2),rgb(63, 42, 2),rgb(179, 123, 19));
 }
 .caixa{
@@ -20,14 +23,14 @@
     bottom: 0;
     width: 70px;
     right: -80px;  
-    animation: caixa-animacao 1s infinite linear; 
+    animation: caixa-animacao 900ms infinite linear; 
  }
 .shuriken{
     position: absolute;
     bottom: 120px;
     width: 40px;
     right: -50px;  
-    animation: shuriken-animacao 1s infinite linear; 
+    animation: shuriken-animacao 900ms infinite linear; 
 }
 .ninja{
     position: absolute;
@@ -47,10 +50,20 @@
     bottom: 0px;
 }
 h1{
-    color: white
+    margin-left: 20px;
+    margin-top: 10px;
+    color: white;
+}
+p{
+    margin-top: -50px;
+    color: white;
+    text-align: center;
+    font: normal 20pt Arial;
 }
 .teclaespaco{
-  width: 200px;  
+    
+    width: 200px; 
+    font: normal 20pt Arial
 }
 
 @keyframes caixa-animacao{
