@@ -41,9 +41,8 @@ body{
 .jump{
     animation: jump 600ms ease-out;
 }
-.rasteira{    
-   animation: rasteira 400ms ease-out;
-}
+
+
 .florestas{
     background-image: url(/fotos/florestas.png); 
     background-repeat: repeat; 
@@ -68,7 +67,9 @@ p{
     width: 200px; 
     font: normal 20pt Arial
 }
-
+ /* Os 'key' servem para mudar os frames de um objeto dependendo da situação que o usuário desejar
+    Geralmente são usadas em animações.
+ */
 @keyframes caixa-animacao{
     from{
         right: -15%;
@@ -98,14 +99,6 @@ p{
     
 }
 
-@keyframes rasteira{
-    0%{
-        bottom: 0px;
-    }
-    100%{
-        bottom: 0px;
-    }
-}
 @keyframes florestas-animacao{
     from{
         
