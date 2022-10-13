@@ -23,15 +23,15 @@ body{
     bottom: 0;
     width: 70px;
     right: -80px;  
-    animation: caixa-animacao 900ms infinite linear; 
+     animation: caixa-animacao 900ms infinite linear; 
  }
 .shuriken{
     position: absolute;
     bottom: 120px;
     width: 40px;
     right: -50px;  
-    animation: shuriken-animacao 900ms infinite linear; 
-}
+     animation: shuriken-animacao 900ms infinite linear; 
+ }
 .ninja{
     position: absolute;
     width: 90px;
@@ -40,6 +40,9 @@ body{
 }
 .jump{
     animation: jump 600ms ease-out;
+}
+.rasteira{    
+   animation: rasteira 400ms ease-out;
 }
 .florestas{
     background-image: url(/fotos/florestas.png); 
@@ -95,6 +98,14 @@ p{
     
 }
 
+@keyframes rasteira{
+    0%{
+        bottom: 0px;
+    }
+    100%{
+        bottom: 0px;
+    }
+}
 @keyframes florestas-animacao{
     from{
         

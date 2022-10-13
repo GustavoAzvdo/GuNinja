@@ -6,19 +6,23 @@ const musica = document.querySelector('.musica');
 var cont = 0
 
 var jogar = false;  
+//Adicionando o evento 'jump' na tecla 'Space' do teclado
 document.addEventListener("keydown", (espaco) =>{
     if((espaco.code === "Space")){
         jump();
-     }    
-     musica.muted = false    
+    }    
+     musica.muted = false    //Apertando o espaço a musica ira começar.
 })
 
-const jump = () => {
+
+//Criando a variavel(const) 'jump' onde ele iniciará o comando e logo após ele vai remover para conseguir add denovo
+const jump = () => {    
     ninja.classList.add('jump');
     setTimeout(() =>{
         ninja.classList.remove('jump');  
-    },600)
+    },600) //Tempo de execução
 }
+
 
 const loop = setInterval(() => {
     
@@ -38,7 +42,10 @@ const loop = setInterval(() => {
         ninja.style.animation = 'none';
         ninja.style.bottom  = `${ninjaPosicao}px` 
 
-        ninja.src = './fotos/game-over-2.gif'
+        ninja.src = './fotos/morte.gif'
+        ninja.style.width = "130px"
+        ninja.style.marginLeft = "3px"
+        
         
         
         clearInterval(loop)
@@ -68,7 +75,10 @@ const loop = setInterval(() => {
         ninja.style.animation = 'none';
         ninja.style.bottom  = `${ninjaPosicao}px` 
 
-        ninja.src = './fotos/game-over-2.gif'
+        ninja.src = './fotos/morte.gif'
+        ninja.style.width = "130px"
+        ninja.style.marginLeft = "3px"
+      
         
         
         clearInterval(loop)
