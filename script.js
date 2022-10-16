@@ -13,11 +13,11 @@ document.addEventListener("keydown", (espaco) =>{
      musica.muted = false    //Apertando o espaço a musica ira começar.
 })
 
+//Comando de pulo pro celular
 document.addEventListener("touchstart", (screen) => {
     jump();
     musica.muted = false
 })
-
 
 //Criando a variavel(const) 'jump' onde ele iniciará o comando e logo após ele vai remover para conseguir add denovo
 const jump = () => {    
@@ -50,29 +50,23 @@ const loop = setInterval(() => {
         ninja.src = './fotos/morte.gif' //Quando o personagem colide, aparecerá um gif de morte.
         ninja.style.width = "130px"
         ninja.style.marginLeft = "1px" //Distancia do gif com o objeto que ele colidiu.
-        
-        
-        
+               
         clearInterval(loop)
        // Função 'gameover' = Caso o personagem morra, mostrará uma mensagem falando do seu score 
        function gameover(){
-            var alerta = alert(`GAMEOVER! A sua pontuação foi de ${cont}`)
-            
-                location.reload(); //Reinicia a paginá para o proximo jogo comecar automaticamente.
-            
-            
+           
+            var alerta = alert(`GAMEOVER! A sua pontuação foi de ${cont}`)         
+            location.reload(); //Reinicia a paginá para o proximo jogo comecar automaticamente.
+                       
         }
        setTimeout(gameover,100) //A mensagem de score aparecera 100ms dps de morrer, ele tem esse tempo por causa do tempo de inicialização do gif de morte.
        setInterval(loop)
-
-       
      
     }
     //Sistema de colisão com a shuriken.
     //Caso seja atingindo, a animação vai parar.
     else if(shurikenPosicao <= 85 && shurikenPosicao > 0 && (ninjaPosicao >= 65 && ninjaPosicao < 120)){
-
-        
+       
         shuriken.style.animation = 'none';
         shuriken.style.left = `${shurikenPosicao}px`;
 
@@ -85,27 +79,21 @@ const loop = setInterval(() => {
         ninja.src = './fotos/morte.gif'
         ninja.style.width = "130px"
         ninja.style.marginLeft = "3px"
-      
-        
-        
+              
         clearInterval(loop)
         
         function gameover(){
+            
             var alerta = alert(`GAMEOVER! A sua pontuação foi de ${cont}`) 
-            
-                location.reload();
-            
-           
+            location.reload();
+                      
         }
        setTimeout(gameover,100)
        setInterval(loop)
-
-       
        
     }
     //Caso você continue vivo, o seu score aumentará em cada segundo(10 em 10)
-    else{
-        
+    else{        
         cont++; //pontuacao por tempo
         score.innerHTML = `SCORE: ${cont}`
     }
