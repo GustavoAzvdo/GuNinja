@@ -13,6 +13,11 @@ document.addEventListener("keydown", (espaco) =>{
      musica.muted = false    //Apertando o espaço a musica ira começar.
 })
 
+document.addEventListener("touchstart", (screen) => {
+    jump();
+    musica.muted = false
+})
+
 
 //Criando a variavel(const) 'jump' onde ele iniciará o comando e logo após ele vai remover para conseguir add denovo
 const jump = () => {    
